@@ -22,7 +22,7 @@
         color: #e3007f;
         font-size: 13px;
     }
-    .refreshIcon-normal {
+    .refreshIcon {
         position: absolute;
         width: 25px;
         height: 22px;
@@ -30,11 +30,14 @@
         left: 70px;
         transition-property: transform;
         transition-duration: 100ms;
+    }
+    .refreshIcon-normal {
         transform: rotate(0);
         visibility: visible;
     }
     .refreshIcon-dragging {
         transform: rotate(180deg);
+        visibility: visible;
     }
     .refreshIcon-refreshing {
         visibility: hidden;
@@ -62,16 +65,16 @@
         computed: {
             refreshIconClass(){
                 if (this.data.refreshState == 'normal') {
-                    return 'refreshIcon-normal';
+                    return 'refreshIcon refreshIcon-normal';
                 } else if (this.data.refreshState == 'dragging') {
-                    return 'refreshIcon-dragging';
+                    return 'refreshIcon refreshIcon-dragging';
                 } else if (this.data.refreshState == 'refreshing') {
-                    return 'refreshIcon-refreshing';
+                    return 'refreshIcon refreshIcon-refreshing';
                 }
             },
             refreshLoadingClass() {
                 if (this.data.refreshState == 'refreshing') {
-                    return 'refreshLoading-refreshing';
+                    return 'refreshLoading refreshLoading-refreshing';
                 } else {
                     return 'refreshLoading';
                 }
