@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <input placeholder="输入限制为10，自动获取焦点" maxlength="10" autofocus/>
         <input type="password" placeholder="密码输入框"/>
         <input placeholder="数字键盘" keyboardType="number"/>

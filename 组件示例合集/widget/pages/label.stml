@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <text>组件置于label内部</text>
 		<checkbox-group onChange={this.checkboxgroupChanged}>
 			<label class="item">

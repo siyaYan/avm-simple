@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <view style={'height:'+this.data.swiperHeight+'px;'}>
             <swiper class="swiper" autoplay circular onchange={this.onchange}>
                 <swiper-item v-for="(_item,index) in picList" data-index={index} onclick={this.ontapimg}>

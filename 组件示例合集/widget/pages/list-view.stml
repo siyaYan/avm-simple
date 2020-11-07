@@ -1,5 +1,5 @@
 <template>
-    <list-view id="listView" class="main" scrollToTop onscrolltolower={this.onscrolltolower}>
+    <list-view id="listView" class="main" enable-back-to-top onscrolltolower={this.onscrolltolower}>
 		<cell onclick={this.itemClick}>
 			<text class="title">{item.title}</text>
 			<text class="subtitle">{item.subtitle}</text>

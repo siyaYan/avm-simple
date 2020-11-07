@@ -1,6 +1,6 @@
 <template>
     <view class="main">
-        <scroll-view class="container" scrollY scrollEnabled="false">
+        <scroll-view class="container" scroll-y scroll-enabled="false">
             <list-view class="listView" id="listView" cellTypeKey="type" onscrolltoupper={this.onscrolltoupper}>
 				<list-header class="listHeader">
 					<image width="20px" height="20px" src="../image/loading.gif"></image>

@@ -1,8 +1,8 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <progress value="30"/>
-        <progress value="50" progressValueColor="#f00"/>
-        <progress value="90" animation/>
+        <progress value="50" activeColor="#f00"/>
+        <progress value="90" active/>
     </scroll-view>
 </template>
 <style>

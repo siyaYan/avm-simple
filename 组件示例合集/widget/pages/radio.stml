@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
 		<radio-group onChange={this.radiogroupChanged}>
 			<label>
 				<radio checked color="#f0f" value="radio_c"/>

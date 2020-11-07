@@ -1,5 +1,5 @@
 <template>
-    <scroll-view>
+    <scroll-view scroll-y>
         <view class="item" v-for="(item, index) in lists" index={index} onclick={this.itemAction}>
             <text class="name">{item.name}</text>
         </view>

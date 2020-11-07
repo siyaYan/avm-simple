@@ -1,7 +1,7 @@
 <template>
     <view class="main">
         <view class="grid-container">
-            <scroll-view class="scroll-view" scrollX scrollY="false" scrollXBar="false" onscroll="onscroll">
+            <scroll-view class="scroll-view" scroll-x scroll-y="false" show-scrollbar="false" onscroll="onscroll">
                 <view class="scroll-content" style={'width:'+this.data.contentWidth+'px;'}>
                     <view class="item" style={'width:'+this.data.itemWidth+'px;'} v-for="(item,index) in itemList" data-index={index} onclick="itemclicked">
                         <image class="icon" src={item.icon}></image>

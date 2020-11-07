@@ -1,8 +1,8 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <text>拖动过程中的value：{this.data.changingValue}</text>
         <text>拖动完成后的value：{this.data.value}</text>
-        <slider blockSize="20" onchange={this.onchange} onchanging={this.onchanging}></slider>
+        <slider block-size="20" onchange={this.onchange} onchanging={this.onchanging}></slider>
     </scroll-view>
 </template>
 <style>

@@ -1,6 +1,6 @@
 <template>
-    <scroll-view class="main" scrollY>
-		<checkbox-group onChange={this.checkboxgroupChanged}>
+    <scroll-view class="main" scroll-y>
+		<checkbox-group onchange={this.checkboxgroupChanged}>
 			<label>
 				<checkbox checked color="#f0f" value="checkbox_c"/>
 				<text>中国</text>
@@ -10,7 +10,7 @@
 				<text>美国</text>
 			</label>
 		</checkbox-group>
-		<checkbox-group onChange={this.checkboxgroupChanged}>
+		<checkbox-group onchange={this.checkboxgroupChanged}>
 			<label>
 				<checkbox checked icon="../image/check.png" selectedIcon="../image/checked.png" value="checkbox_c"/>
 				<text>中国</text>

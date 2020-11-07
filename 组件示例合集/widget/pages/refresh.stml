@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <refresh class="refresh" state={refreshState} onstatechange={this.onstatechange}>
             <image class={refreshIconClass} src="../image/refresh.png"></image>
             <image class={refreshLoadingClass} src="../image/loading.gif"></image>

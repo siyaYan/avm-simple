@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <switch checked onchange={this.onchange}/>
         <switch checked color="#00f" onchange={this.onchange}/>
         <switch disabled/>

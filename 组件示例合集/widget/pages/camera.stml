@@ -1,11 +1,11 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <button onclick={this.switchMode}>{this.data.scanCodeMode?'切换为拍照':'切换为扫码'}</button>
         <camera id="camera" v-if="scanCodeMode" mode="scanCode" onstop={this.onstop} onerror={this.onerror} oninitdone={this.oninitdone} onscancode={this.onscancode}>
 		</camera>
         <view v-else>
-            <camera id="camera" devicePosition={this.data.devicePosition} onstop={this.onstop} onerror={this.onerror} oninitdone={this.oninitdone}>
-                <scroll-view class="btns" scrollX>
+            <camera id="camera" device-position={this.data.devicePosition} onstop={this.onstop} onerror={this.onerror} oninitdone={this.oninitdone}>
+                <scroll-view class="btns" scroll-x>
                     <button onclick={this.takePhoto}>拍照</button>
                     <button onclick={this.startRecord}>开始录制</button>
                     <button onclick={this.stopRecord}>停止录制</button>

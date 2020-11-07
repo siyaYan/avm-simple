@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <text class="title">使用默认控件</text>
 		<video src={this.data.url} poster={this.data.poster} mode="aspectFit"></video>
         <text class="title">自定义控件</text>
@@ -9,8 +9,8 @@
 				<text class="btn" onclick={this.playorpause}>{this.data.isPlaying?'暂停':'播放'}</text>
 				<text class="time">{this.data.timeProgressDesc}</text>
 				<view class="progress-container">
-					<progress progressValueColor="#999" value={this.data.loadProgressValue}></progress>
-					<slider blockSize="12" backgroundColor="rgba(0,0,0,0)" value={this.data.sliderValue} onchange={this.onSliderChange} onchanging={this.onSliderChanging}/>
+					<progress activeColor="#999" value={this.data.loadProgressValue}></progress>
+					<slider block-size="12" backgroundColor="rgba(0,0,0,0)" value={this.data.sliderValue} onchange={this.onSliderChange} onchanging={this.onSliderChanging}/>
 				</view>
 				<text class="time">{this.data.totalTimeDesc}</text>
 				<text class="btn" onclick={this.fullScreenAction}>{this.data.fullScreen?'返回':'全屏'}</text>

@@ -7,7 +7,7 @@
                 <image class="nav-btn btn-camera" src={this.data.isTranslucent?'../image/camera_white.png':'../image/camera_black.png'}></image>
             </view>
         </safe-area>
-        <scroll-view class="scroll-view" scrollToTop onscroll="onscroll">
+        <scroll-view class="scroll-view" enable-back-to-top onscroll="onscroll">
             <view class="scroll-content">
                 <image class="bg-img" style={'height:'+this.data.bgImgHeight+'px;margin-top:'+offy+'px;'} src="../image/bg.png"></image>
             </view>

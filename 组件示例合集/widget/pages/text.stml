@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <text>普通文本</text>
         <text class="bold">粗体文本</text>
         <text class="italic">斜体文本</text>

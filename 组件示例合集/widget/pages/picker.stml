@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <safe-area></safe-area>
         <picker id="selector" mode="selector" value={selectorValue} onChange={this.selectorChange}>
 			<text>选择性别：{genderDesc}</text>
@@ -7,7 +7,7 @@
 		<picker id="multiSelector" mode="multiSelector" value={multiSelectorValue} onChange={this.multiSelectorChange}>
 			<text>选择年月：{dateDesc}</text>
 		</picker>
-        <picker id="areaMltiSelector" mode="multiSelector" dataKey="name" value={areaMltiSelectorValue} onchange={this.areaMultiSelectorChange} oncolumnchange={this.areaMultiSelectorColumnChange}>
+        <picker id="areaMltiSelector" mode="multiSelector" range-key="name" value={areaMltiSelectorValue} onchange={this.areaMultiSelectorChange} oncolumnchange={this.areaMultiSelectorColumnChange}>
             <text>选择区域：{areaDesc}</text>
         </picker>
     </scroll-view>

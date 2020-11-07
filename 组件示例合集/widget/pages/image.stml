@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <view class="item">
             <text class="name">原图</text>
             <image class="originImage" src={this.data.src} mode="widthFix"></image>

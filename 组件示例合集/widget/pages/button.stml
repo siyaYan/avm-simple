@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <button onclick={this.btnAction}>默认按钮</button>
         <button class="btn" onclick={this.btnAction}>自定义按钮</button>
     </scroll-view>

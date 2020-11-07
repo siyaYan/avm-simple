@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="main" scrollY>
+    <scroll-view class="main" scroll-y>
         <form onsubmit={this.onsubmit}>
             <checkbox-group class="item" name="checkbox">
                 <label>

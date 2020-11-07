@@ -1,6 +1,6 @@
 <template>
     <view class="main">
-        <camera id="camera" devicePosition={devicePosition}>
+        <camera id="camera" device-position={devicePosition}>
             <view class="change-btn" onclick={this.changeDevicePosition}></view>
             <view class="toolbar">
                 <view class="close-btn" onclick="api.closeWin();"></view>
