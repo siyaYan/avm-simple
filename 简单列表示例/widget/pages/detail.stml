@@ -11,8 +11,8 @@
                 <view class="info">
                     <text class="info-name">{item.name}</text>
                     <text class="info-description">{item.description}</text>
-                    <text class="info-price">{'￥'+item.price}</text>
-                    <text class="info-origin-price">{'￥'+item.originPrice}</text>
+                    <!-- <text class="info-price">{'￥'+item.price}</text>
+                    <text class="info-origin-price">{'￥'+item.originPrice}</text> -->
                 </view>
             </view>
         </cell>
