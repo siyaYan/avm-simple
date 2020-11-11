@@ -1,7 +1,7 @@
 <template>
     <scroll-view class="main" scroll-y>
         <textarea placeholder="输入限制为50" maxlength="50" autofocus/>
-        <textarea placeholder="自动增长高度" autoHeight/>
+        <textarea placeholder="自动增长高度" auto-height/>
     </scroll-view>
 </template>
 <style>

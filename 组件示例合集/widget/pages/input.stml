@@ -2,8 +2,8 @@
     <scroll-view class="main" scroll-y>
         <input placeholder="输入限制为10，自动获取焦点" maxlength="10" autofocus/>
         <input type="password" placeholder="密码输入框"/>
-        <input placeholder="数字键盘" keyboardType="number"/>
-        <input placeholder="键盘完成按钮文字为搜索" confirmType="search" onconfirm={this.onconfirm}/>
+        <input placeholder="数字键盘" keyboard-type="number"/>
+        <input placeholder="键盘完成按钮文字为搜索" confirm-type="search" onconfirm={this.onconfirm}/>
     </scroll-view>
 </template>
 <style>
