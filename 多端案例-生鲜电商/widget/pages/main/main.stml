@@ -12,16 +12,11 @@
                 <image class="header-right-icon" src="../../image/home_membercenter.png"></image>
             </view>
         </view>
-        <scroll-view class="nav" scroll-x='true' scrollX scrollXBar="false">
+        <scroll-view class="nav" scroll-x='true' show-scrollbar="false">
             <text class={'nav-menu'+(this.data.currentIndex==index?' nav-menu-selected':'')} v-for="(item,index) in wareTypeList" data-index={index} onclick={this.fnSetNavMenuIndex}>{item.name}</text>
         </scroll-view>
     </view>
-    <scroll-view scroll-y='true' scrollY class="warelist" onscrolltolower={this.onscrolltolower}>
-        <refresh class="refresh" state={refreshState} onstatechange={this.onstatechange}>
-            <image class={refreshIconClass} src="../../image/refresh.png"></image>
-            <image class={refreshLoadingClass} src="../../image/loading.gif"></image>
-            <text class="refreshStateDesc">{refreshStateDesc}</text>
-        </refresh>
+    <scroll-view scroll-y='true' class="warelist" refresher-enabled refresher-triggered={this.data.refresherTriggered} onrefresherrefresh={this.onrefresherrefresh} onscrolltolower={this.onscrolltolower}>
         <view class="header">
             <image class="banner" src={this.data.bannerUrl} placeholder="../../image/default_rect.png" thumbnail="false" mode="widthFix">
         </view>
@@ -54,7 +49,7 @@
         <safe-area></safe-area>
         <text class="cityselector-close" onclick={this.closeAction}>×</text>
         <text class="cityselector-title">选择所需服务的地区</text>
-        <scroll-view class="cityselector-section">
+        <scroll-view scroll-y class="cityselector-section">
             <view v-for="(item, index) in cityDataList">
                 <text class="cityselector-city" data-item={item} onclick={this.fnSelectCity}>{item.name}</text>
             </view>
@@ -79,35 +74,8 @@ export default{
             bannerUrl: '',
             skip: 0,
             haveMoreData: true,
-            refreshState: 'normal',
+            refresherTriggered: false,
             wareTypeId: ''
-        }
-    },
-    computed: {
-        refreshIconClass(){
-            if (this.data.refreshState == 'normal') {
-                return 'refreshIcon refreshIcon-normal';
-            } else if (this.data.refreshState == 'dragging') {
-                return 'refreshIcon refreshIcon-dragging';
-            } else if (this.data.refreshState == 'refreshing') {
-                return 'refreshIcon refreshIcon-refreshing';
-            }
-        },
-        refreshLoadingClass() {
-            if (this.data.refreshState == 'refreshing') {
-                return 'refreshLoading refreshLoading-refreshing';
-            } else {
-                return 'refreshLoading';
-            }
-        },
-        refreshStateDesc() {
-            if (this.data.refreshState == 'normal') {
-                return '下拉可以刷新';
-            } else if (this.data.refreshState == 'dragging') {
-                return '松开可以刷新';
-            } else if (this.data.refreshState == 'refreshing') {
-                return '刷新中...';
-            }
         }
     },
     methods:{
@@ -130,7 +98,7 @@ export default{
                 var wareType = this.data.wareTypeList[this.data.currentIndex];
                 this.data.bannerUrl = wareType.banner;
                 this.data.wareTypeId = wareType.id;
-                this.data.refreshState = 'refreshing';
+                this.data.refresherTriggered = true;
                 this.fnGetWareList(false);
             }
         },
@@ -244,16 +212,9 @@ export default{
                 });
             }
         },
-        onstatechange(e) {
-            var state = e.detail.state;
-            if (state == 'normal') {
-                this.data.refreshState = 'normal';
-            } else if (state == 'dragging') {
-                this.data.refreshState = 'dragging';
-            } else if (state == 'refreshing') {
-                this.data.refreshState = 'refreshing';
-                this.fnGetWareList(false);
-            }
+        onrefresherrefresh(){
+            this.data.refresherTriggered = true;
+            this.fnGetWareList(false);
         },
         // 获取商品列表，通过loadMore_参数区分是首次加载还是加载更多
         fnGetWareList(loadMore_) {
@@ -298,6 +259,7 @@ export default{
                     });
                 }
                 that.data.refreshState = 'normal';
+                that.data.refresherTriggered = false;
             });
         },
         getFixedWareList(wareList, cartWareList) {

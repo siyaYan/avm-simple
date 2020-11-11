@@ -1,8 +1,8 @@
 <template>
     <view class="main">
         <navigationBar title="商品详情" rightButtonText="分享" onRightButton={this.onRightButton}></navigationBar>
-        <scroll-view class="scrollView" scrollY scroll-y='true'>
-            <swiper class="swiper shrink" style={'height:'+this.data.swiperHeight+'px;'} indicatorDots indicatorActiveColor="#e3007f" autoplay circular>
+        <scroll-view class="scrollView" scroll-y='true'>
+            <swiper class="swiper shrink" style={'height:'+this.data.swiperHeight+'px;'} indicator-dots indicator-active-color="#e3007f" autoplay circular>
                 <swiper-item v-for="(_item,index) in picList">
                     <image class="img" placeholder="../../image/default_square.png" src={_item} mode="aspectFit" thumbnail="false"></image>
                 </swiper-item>
@@ -31,7 +31,7 @@
             </view>
             <view class="recommend shrink">
                 <text class="recommendTitle">推荐商品</text>
-                <scroll-view class="recommendList" scrollX scrollXBar="false">
+                <scroll-view class="recommendList" scroll-x show-scrollbar="false">
                     <view class="recommendItem" v-for="(item,index) in recommendList" data-id={item.id} onclick={this.fnOpenDetailWin}>
                         <image class="recommend-thumbnail" src={item.thumbnail} placeholder="../../image/default_square.png"></image>
                         <text class="recommend-info-name">{item.name + ' ' + (item.unit||'')}</text>
@@ -88,7 +88,9 @@ export default{
     methods:{
         apiready() {
             this.data.swiperHeight = api.winWidth;
-            this.data.wareCount = api.pageParam.wareCount;
+            if (api.pageParam.wareCount) {
+                this.data.wareCount = api.pageParam.wareCount;
+            }
             // 获取商品详情数据
             this.getWareInfo(api.pageParam.wareId);
         },

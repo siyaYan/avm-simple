@@ -1,7 +1,7 @@
 <template>
     <view class="main">
         <navigationBar title="收货地址" rightButtonText={this.data.id?"删除":''} onRightButton={this.onRightButton}></navigationBar>
-        <scroll-view class="scrollView" scrollY scroll-y='true'>
+        <scroll-view class="scrollView" scroll-y='true'>
             <view class="wrap">
 				<view class="item">
 					<label class="label">
@@ -19,7 +19,7 @@
 				</view>
 				<view class="item">
 					<text class="text">所在区域：</text>
-					<picker id="picker" class="select" mode="multiSelector" dataKey="name" value={this.data.selectValue} onchange={this.onselectchange} oncolumnchange={this.onselectcolumnchange}>
+					<picker id="picker" class="select" mode="multiSelector" range={this.data.dataList} range-key="name" value={this.data.selectValue} onchange={this.onselectchange} oncolumnchange={this.onselectcolumnchange}>
 						<text class="text">{this.data.region?this.data.region:'点击选择收货所在的区域'}</text>
 					</picker>
 					<image class="right-arrow" src="../../image/item_user_address_right.png"></image>
@@ -57,7 +57,8 @@ export default{
             region: '', 
             type: 0,
             addresstype: ['公司','住宅','学校','其他'],
-            selectValue: [0,0,0]
+            selectValue: [0,0,0],
+            dataList: []
         }
     },
     methods:{
@@ -119,11 +120,11 @@ export default{
             } else {
                 dataList[2] = [];
             }
-            this.dataList = dataList;
-            var picker = document.getElementById('picker');
-            picker.setData({
-                data: dataList
-            });
+            this.data.dataList = dataList;
+            // var picker = document.getElementById('picker');
+            // picker.setData({
+            //     data: dataList
+            // });
         },
         onselectchange(e) {
             var value = e.detail.value;
@@ -131,7 +132,7 @@ export default{
             var region = '';
             for (var i=0;i<value.length;i++) {
                 var index = value[i];
-                var list = this.dataList[i];
+                var list = this.data.dataList[i];
                 if (list.length > index) {
                     region += list[index].name;
                 }
@@ -140,7 +141,7 @@ export default{
         },
         onselectcolumnchange(e) {
             var column = e.detail.column;
-            if (column == this.dataList.length-1) {
+            if (column == this.data.dataList.length-1) {
                 return;
             }
             var value = e.detail.value;

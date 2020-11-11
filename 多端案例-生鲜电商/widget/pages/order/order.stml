@@ -1,7 +1,7 @@
 <template>
     <view class="main">
         <navigationBar title="确认订单"></navigationBar>
-        <scroll-view class="scrollView" scrollY scroll-y='true'>
+        <scroll-view class="scrollView" scroll-y='true'>
             <view class="info-addr">
                 <image class="addr-icon" src="../../image/icon_address.png"/>
                 <view class="addr-middle">

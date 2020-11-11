@@ -1,7 +1,7 @@
 <template>
     <view class="main">
         <navigationBar title="我的优惠券"></navigationBar>
-        <scroll-view class="scrollView" scrollY scroll-y='true' bounces="false">
+        <scroll-view class="scrollView" scroll-y='true' bounces="false">
             <view class="inputBar">
                 <input class="input" placeholder="请输入优惠码">
                 <text class="button">兑换</text>

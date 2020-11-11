@@ -1,7 +1,7 @@
 <template>
     <view class="main"> 
         <navigationBar title="会员登录" rightButtonText="注册" onRightButton={this.onRightButton}></navigationBar>
-        <scroll-view class="scrollView" scrollY scroll-y='true'>
+        <scroll-view class="scrollView" scroll-y='true'>
             <view class="container">
                 <input id="username" class="input" placeholder="用户名"/>
                 <input id="password" class="input" type="password" placeholder="密码"/>

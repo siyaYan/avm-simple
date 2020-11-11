@@ -1,5 +1,5 @@
 <template>
-    <scroll-view class="recharge-main" scrollY scroll-y='true'>
+    <scroll-view class="recharge-main" scroll-y='true'>
         <view class="recharge-container">
             <view style={"width:"+this.data.itemWidth+"px;height:"+this.data.itemHeight+"px;"} class="recharge-item" v-for="(item, index) in dataList">
                 <view class="recharge-top">

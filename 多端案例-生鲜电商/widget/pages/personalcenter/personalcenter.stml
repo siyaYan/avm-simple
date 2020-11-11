@@ -1,7 +1,7 @@
 <template>
     <view class="main">
         <navigationBar></navigationBar>
-        <scroll-view class="scroll-view" scrollY scroll-y='true' bounces="false">
+        <scroll-view class="scroll-view" scroll-y='true' bounces="false">
             <view class="info-bg">
                 <image id="avatar" class="info-avatar" placeholder="../../image/default_square.png" src={this.data.avatarUrl} onclick={this.fnSetAvatar}></image>
                 <text id="username" class="info-username">{this.data.userInfo.username}</text>

@@ -2,7 +2,7 @@
     <view class="main"> 
         <navigationBar title="购物车"></navigationBar>
         <view class="content">
-            <scroll-view v-if="haveData" scroll-y="true" scrollY class="listView">
+            <scroll-view v-if="haveData" scroll-y="true" class="listView">
                 <view class="cell" v-for="(item,index) in dataList">
                     <view data-id={item.id} data-wareCount={item.wareCount} class="container" onclick={this.fnOpenDetailWin}>
                         <label>

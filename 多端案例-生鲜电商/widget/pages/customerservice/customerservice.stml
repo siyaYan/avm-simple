@@ -1,7 +1,7 @@
 <template>
     <view class="main" style={"margin-bottom:"+this.data.marginBottom+"px;"}>
         <navigationBar title="客服"></navigationBar>
-        <view class="container" scrollY scroll-y='true' scrollEnabled="false">
+        <view class="container">
             <scroll-view class="listView" id="listView" scroll-y='true'>
                 <view v-for="(item,index) in dataList" class={item.type=='self'?'cellSelf':'cellUser'}>
                     <image class="icon" src={item.icon}></image>
@@ -12,7 +12,7 @@
                 </view>
             </scroll-view>
             <view class="input-bar">
-                <textarea id="input" class="input" autoHeight onfocus={this.onfocus} onconfirm={this.sendMsg}></textarea>
+                <textarea id="input" class="input" auto-height onfocus={this.onfocus} onconfirm={this.sendMsg}></textarea>
                 <button class="sendBtn" onclick="sendMsg();">发送</button>
             </view>
             <safe-area></safe-area>
