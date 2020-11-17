@@ -2,14 +2,14 @@
     <scroll-view class="main" scroll-y>
         <text class="title">使用默认设置</text>
 		<swiper id="defaultSwiper" autoplay circular indicator-dots indicator-color="#ddd" indicator-active-color="#f0f">
-			<swiper-item>
+			<swiper-item reusable>
 				<text class="desc">{item}</text>
 			</swiper-item>
 		</swiper>
         <text class="title">使用自定义指示器</text>
         <view class="container">
             <swiper id="customSwiper" autoplay circular onchange={this.onchange}>
-                <swiper-item>
+                <swiper-item reusable>
                     <text class="desc">{item}</text>
                 </swiper-item>
             </swiper>

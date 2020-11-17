@@ -13,7 +13,7 @@
             </scroll-view>
             <view class="input-bar">
                 <textarea id="input" class="input" auto-height onfocus={this.onfocus} onconfirm={this.sendMsg}></textarea>
-                <button class="sendBtn" onclick="sendMsg();">发送</button>
+                <text class="sendBtn" onclick="sendMsg();">发送</text>
             </view>
             <safe-area></safe-area>
         </view>
@@ -224,10 +224,21 @@ export default{
         margin: 7px 10px;
         border: none;
         border-radius: 4px;
+        box-sizing: border-box;
     }
     .sendBtn {
         margin-right: 10px;
         margin-bottom: 7px;
         height: 40px;
+        line-height: 40px;
+        border: 1px solid #dfdfdf;
+        border-radius: 4px;
+        padding: 0 20px;
+        color: black;
+        text-align: center;
+        background: #f8f8f8;
+    }
+    .sendBtn:active {
+        opacity: 0.7;
     }
 </style>

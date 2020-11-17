@@ -31,7 +31,7 @@
             </view>
             <view class="recommend shrink">
                 <text class="recommendTitle">推荐商品</text>
-                <scroll-view class="recommendList" scroll-x show-scrollbar="false">
+                <scroll-view class="recommendList" scroll-x show-scrollbar={false} enhanced>
                     <view class="recommendItem" v-for="(item,index) in recommendList" data-id={item.id} onclick={this.fnOpenDetailWin}>
                         <image class="recommend-thumbnail" src={item.thumbnail} placeholder="../../image/default_square.png"></image>
                         <text class="recommend-info-name">{item.name + ' ' + (item.unit||'')}</text>
@@ -316,6 +316,7 @@ export default{
         padding: 20px;
         margin-bottom: 10px;
         background-color: #fff;
+        white-space: nowrap;
     }
     .recommendTitle {
         font-size: 18px;
@@ -326,6 +327,7 @@ export default{
         margin-top: 10px;
     }
     .recommendItem {
+        display: inline-block;
         width: 100px;
         height: 100%;
         margin-right: 10px;
