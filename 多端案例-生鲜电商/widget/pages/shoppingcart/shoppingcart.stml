@@ -16,8 +16,8 @@
                             <text class="info-origin-price">{'￥'+item.originPrice}</text>
                         </view>
                         <view class="control">
-                            <image class={'minus'+(item.wareCount>0?'':' none')} data-index={index} src="../../image/minus.png" onclick={this.fnMinus}>
-                            <text class={'count'+(item.wareCount>0?'':' none')}>{item.wareCount}</text>
+                            <image class={item.wareCount>0?'minus':'none'} data-index={index} src="../../image/minus.png" onclick={this.fnMinus}>
+                            <text class={item.wareCount>0?'count':'none'}>{item.wareCount}</text>
                             <image class="add" data-index={index} src="../../image/add.png" onclick={this.fnAdd}>
                         </view>
                     </view>

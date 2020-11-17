@@ -24,9 +24,6 @@ export default{
             this.fnGetCityList();
         },  
         closeAction() {
-            for (const key in this) {
-                console.log(this[key]);
-            }
             this.closeFrame();
         },
         closeFrame(currentCity) {
@@ -70,6 +67,7 @@ export default{
 <style>
     .cityselector-main {
         height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
     }
     .cityselector-close {
         width: 50px;
