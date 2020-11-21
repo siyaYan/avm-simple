@@ -91,7 +91,7 @@ export default{
             if (this.data.wareTypeList.length > 0) {
                 var wareType = this.data.wareTypeList[this.data.currentIndex];
                 this.data.bannerUrl = wareType.banner;
-                this.data.wareTypeId = wareType.id;
+                this.data.wareTypeId = wareType.name=='全部'?'':wareType.id;
                 this.data.refresherTriggered = true;
                 this.fnGetWareList(false);
             }
