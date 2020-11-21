@@ -16,7 +16,7 @@
     <scroll-view class="nav" scroll-x='true' show-scrollbar="false">
         <text class={'nav-menu'+(this.data.currentIndex==index?' nav-menu-selected':'')} v-for="(item,index) in wareTypeList" data-index={index} onclick={this.fnSetNavMenuIndex}>{item.name}</text>
     </scroll-view>
-    <scroll-view scroll-y='true' class="warelist" refresher-enabled refresher-triggered={this.data.refresherTriggered} onrefresherrefresh={this.onrefresherrefresh} onscrolltolower={this.onscrolltolower}>
+    <scroll-view scroll-y='true' class="warelist" enable-back-to-top refresher-enabled refresher-triggered={this.data.refresherTriggered} onrefresherrefresh={this.onrefresherrefresh} onscrolltolower={this.onscrolltolower}>
         <view class="header">
             <image class="banner" src={this.data.bannerUrl} placeholder="../../image/default_rect.png" thumbnail="false" mode="widthFix">
         </view>
@@ -229,7 +229,7 @@ export default{
         // 获取商品列表，通过loadMore_参数区分是首次加载还是加载更多
         fnGetWareList(loadMore_) {
             // 如果是加载更多，需要实现分页
-            var limit = 10;
+            var limit = 20;
             if (loadMore_) {
                 this.data.skip += limit;
             } else {
